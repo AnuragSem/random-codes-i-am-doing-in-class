@@ -12,7 +12,7 @@ else
 (*r)++;
 if((*r)==0)
 {
-(*f)==0;
+(*f)=0;
 }
 printf("enter the element in the queue\n");
 scanf("%d",&a[*r]);
@@ -21,14 +21,26 @@ scanf("%d",&a[*r]);
 
 void dequeue(int *a,int n,int *f,int *r)
 {
-    if(*r==-1)
+    if((*r) == -1)
     {
         printf("QUEUE IS EMPTY\n");
     }
     else
     {
         printf("element %d is being removed",a[*f]);
-        
+        if((*r) == 0)
+        {
+            (*r)--;
+            (*f)--;
+        }
+        else
+        {
+            for(int i =0; i<*r;i++)
+            {
+                a[i] = a[i + 1];
+            }
+            (*r)--;
+        }
         
     }
 }
@@ -60,8 +72,8 @@ switch(option)
 {
 case 1 : enqueue(arr,n,&front,&rear);
 			break;
-case 2 : dequeue(arr,n,&front,&rear)
-         break;
+case 2 : dequeue(arr,n,&front,&rear);
+           break;
 case 3 : display(arr,n,&front,&rear);
 			break;
 }
