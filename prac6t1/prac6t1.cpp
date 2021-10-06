@@ -23,17 +23,13 @@ int main() {
   cout<<a+c<<'\n';
   
   //for string
-  string str1,str2,str3;
-  cout<<"enter two string\n";
-  while((getchar())!='\n')
-  {
-      getline(cin,str1);
-      getline(cin,str2);
-      
-  }
+  string str1="heli",str2="os",str3;
   cout<<"concatination\n";
   str3=str1+str2;
   cout<<str3<<endl;
+  
+  //adding string and integer and storing it in string
+  str3=a+str1;
   
   return 0;
 }
